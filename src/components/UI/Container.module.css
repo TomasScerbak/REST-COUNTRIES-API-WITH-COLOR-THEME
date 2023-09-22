@@ -1,4 +1,6 @@
 .container {
+  display: grid;
+  gap: 4rem;
   max-width: 144rem;
   margin: auto;
 }
