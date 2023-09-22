@@ -1,3 +1,5 @@
+import classes from "./Card.module.css";
+
 type CardProps = {
   image: string;
   name: string;
@@ -8,7 +10,7 @@ type CardProps = {
 
 const Card = (props: CardProps) => {
   return (
-    <div>
+    <div className={classes.card}>
       <header>
         <img src={props.image} alt="country flag" />
       </header>
