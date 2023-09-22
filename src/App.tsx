@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 
+import Container from "./components/UI/Container";
 import Card from "./components/UI/Card";
 
 import fetchCountriesAPI from "./services/CountriesAPI";
@@ -27,16 +28,18 @@ function App() {
   }, []);
   return (
     <Fragment>
-      {countries?.map((country, id) => (
-        <Card
-          image={country.flags.svg}
-          name={country.name.common}
-          population={country.population}
-          region={country.region}
-          capital={country.capital}
-          key={id}
-        />
-      ))}
+      <Container>
+        {countries?.map((country, id) => (
+          <Card
+            image={country.flags.svg}
+            name={country.name.common}
+            population={country.population}
+            region={country.region}
+            capital={country.capital}
+            key={id}
+          />
+        ))}
+      </Container>
     </Fragment>
   );
 }
