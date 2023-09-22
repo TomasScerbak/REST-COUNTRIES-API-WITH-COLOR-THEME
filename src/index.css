@@ -9,6 +9,7 @@ body {
   font-size: 1.8rem;
   height: 100vh;
   font-family: var(--ff-nunito);
+  background-color: var(--very-light-gray);
 }
 *,
 *::before,
@@ -31,7 +32,7 @@ img {
 }
 
 h1 {
-  margin-bottom: 1.6rem;
+  margin: 0 0 1.8rem 0;
 }
 
 p {

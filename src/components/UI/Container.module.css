@@ -3,4 +3,6 @@
   gap: 4rem;
   max-width: 144rem;
   margin: auto;
+  justify-content: center;
+  align-items: center;
 }

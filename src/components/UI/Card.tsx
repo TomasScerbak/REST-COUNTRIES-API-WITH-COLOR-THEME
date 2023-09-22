@@ -14,7 +14,7 @@ const Card = (props: CardProps) => {
       <header>
         <img className={classes.image} src={props.image} alt="country flag" />
       </header>
-      <div>
+      <div className={classes["card-body"]}>
         <h1 className={classes.name}>{props.name}</h1>
         <div className={classes["population-wrapper"]}>
           <p className={classes["population__text"]}>Population:</p>
