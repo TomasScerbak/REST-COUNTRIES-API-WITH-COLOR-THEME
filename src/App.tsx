@@ -8,6 +8,9 @@ type CountryData = {
   population: string;
   region: string;
   capital: string[];
+  flags: {
+    svg: string;
+  };
 }[];
 
 function App() {
@@ -21,12 +24,13 @@ function App() {
   }, []);
   return (
     <Fragment>
-      {countries?.map((country) => (
-        <div>
+      {countries?.map((country, id) => (
+        <div key={id}>
           <h1>{country.name.common}</h1>
           <p>{country.population}</p>
           <p>{country.region}</p>
           <p>{country.capital}</p>
+          <img src={country.flags.svg} alt="" />
         </div>
       ))}
     </Fragment>
