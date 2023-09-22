@@ -1,6 +1,6 @@
 import axios from "axios";
 
-let URL = "https://restcountries.com/v3.1/all?fields=name,flags`";
+let URL = "https://restcountries.com/v3.1/all";
 
 const fetchCountriesAPI = async () => {
   try {
