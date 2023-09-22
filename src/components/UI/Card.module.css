@@ -2,3 +2,39 @@
   max-width: 26.4rem;
   max-height: 33.6rem;
 }
+
+.image {
+  min-width: 30.8rem;
+  min-height: 16rem;
+}
+
+.name {
+  color: var(--very-dark-blue);
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.population-wrapper,
+.region-wrapper,
+.capital-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.population__text,
+.region__text,
+.capital__text {
+  color: var(--very-dark-blue);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.population__number,
+.region__number,
+.capital__number {
+  color: var(--very-dark-blue);
+  font-size: 1.4rem;
+  font-weight: 300;
+}
