@@ -23,6 +23,8 @@ function App() {
   const [countries, setCountries] = useState<CountryData>();
   const [searchedValue, setSearchedValue] = useState();
 
+  console.log(searchedValue);
+
   const searchInputHandler = (event: any) => {
     setSearchedValue(event.target.value);
   };
@@ -41,16 +43,34 @@ function App() {
         searchInputHandler={searchInputHandler}
       />
       <Container>
-        {countries?.map((country, id) => (
-          <Card
-            image={country.flags.svg}
-            name={country.name.common}
-            population={country.population}
-            region={country.region}
-            capital={country.capital}
-            key={id}
-          />
-        ))}
+        <>
+          {countries?.map((country, id) =>
+            country.name.common === searchedValue ? (
+              <Card
+                image={country.flags.svg}
+                name={country.name.common}
+                population={country.population}
+                region={country.region}
+                capital={country.capital}
+                key={id}
+              />
+            ) : null
+          )}
+        </>
+        <>
+          {!searchedValue
+            ? countries?.map((country, id) => (
+                <Card
+                  image={country.flags.svg}
+                  name={country.name.common}
+                  population={country.population}
+                  region={country.region}
+                  capital={country.capital}
+                  key={id}
+                />
+              ))
+            : null}
+        </>
       </Container>
     </Fragment>
   );
