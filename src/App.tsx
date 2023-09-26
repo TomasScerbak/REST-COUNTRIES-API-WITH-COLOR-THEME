@@ -1,5 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 
+import Header from "./components/UI/Header";
+import SearchBar from "./components/UI/SearchBar";
 import Container from "./components/UI/Container";
 import Card from "./components/UI/Card";
 
@@ -19,15 +21,25 @@ type CountryData = {
 
 function App() {
   const [countries, setCountries] = useState<CountryData>();
-  console.log(countries?.map((country) => console.log(country)));
+  const [searchedValue, setSearchedValue] = useState();
+
+  const searchInputHandler = (event: any) => {
+    setSearchedValue(event.target.value);
+  };
 
   useEffect(() => {
     fetchCountriesAPI().then((data) => {
       setCountries(data);
     });
   }, []);
+
   return (
     <Fragment>
+      <Header />
+      <SearchBar
+        value={searchedValue}
+        searchInputHandler={searchInputHandler}
+      />
       <Container>
         {countries?.map((country, id) => (
           <Card
