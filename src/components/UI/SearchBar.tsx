@@ -4,7 +4,7 @@ import classes from "./SearchBar.module.css";
 
 const SearchBar = (props: any) => {
   return (
-    <div className={classes["search-wrapper"]}>
+    <section className={classes["search-wrapper"]}>
       <div className={classes["search-input__wrapper"]}>
         <label htmlFor="search">
           <img
@@ -22,7 +22,7 @@ const SearchBar = (props: any) => {
           placeholder="Search for a country..."
         />
       </div>
-    </div>
+    </section>
   );
 };
 
