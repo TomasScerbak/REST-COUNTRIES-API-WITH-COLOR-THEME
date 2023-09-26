@@ -21,7 +21,7 @@ type CountryData = {
 
 function App() {
   const [countries, setCountries] = useState<CountryData>();
-  const [searchedValue, setSearchedValue] = useState();
+  const [searchedValue, setSearchedValue] = useState("");
 
   const searchInputHandler = (event: any) => {
     setSearchedValue(event.target.value);
@@ -43,7 +43,8 @@ function App() {
       <Container>
         <>
           {countries?.map((country, id) =>
-            country.name.common === searchedValue ? (
+            country.name.common.toLowerCase() ===
+            searchedValue.toLowerCase() ? (
               <Card
                 image={country.flags.svg}
                 name={country.name.common}
