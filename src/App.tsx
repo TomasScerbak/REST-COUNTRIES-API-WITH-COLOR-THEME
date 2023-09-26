@@ -23,8 +23,6 @@ function App() {
   const [countries, setCountries] = useState<CountryData>();
   const [searchedValue, setSearchedValue] = useState();
 
-  console.log(searchedValue);
-
   const searchInputHandler = (event: any) => {
     setSearchedValue(event.target.value);
   };
