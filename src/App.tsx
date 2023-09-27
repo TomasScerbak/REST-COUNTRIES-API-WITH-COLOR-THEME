@@ -43,8 +43,9 @@ function App() {
       <Container>
         <>
           {countries?.map((country, id) =>
-            country.name.common.toLowerCase() ===
-            searchedValue.toLowerCase() ? (
+            country.name.common
+              .toLowerCase()
+              .match(searchedValue.toLowerCase()) ? (
               <Card
                 image={country.flags.svg}
                 name={country.name.common}
