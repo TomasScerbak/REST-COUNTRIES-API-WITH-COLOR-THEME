@@ -43,7 +43,7 @@ function App() {
         value={searchedValue}
         searchInputHandler={searchInputHandler}
       />
-      <Dropdown />
+      <Dropdown countries={countries} />
       <Container>
         <>
           {countries?.map((country, id) =>

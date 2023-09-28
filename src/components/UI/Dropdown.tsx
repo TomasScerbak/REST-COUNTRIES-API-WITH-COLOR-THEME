@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-const Dropdown = () => {
+type DropdownProps {
+    countries: []
+}
+
+const Dropdown = (props: DropdownProps) => {
   const [open, isOpen] = useState(false);
 
   const handleOpen = () => {
@@ -9,14 +13,11 @@ const Dropdown = () => {
 
   return (
     <div onClick={handleOpen}>
-      FilterByRegion
+      Filter by Region
       {open ? (
         <div>
           <ul>
-            <li>Option1</li>
-            <li>Option2</li>
-            <li>Option3</li>
-            <li>Option4</li>
+            {props.countries.map((country) => <li>{country}</li>)}
           </ul>
         </div>
       ) : null}
