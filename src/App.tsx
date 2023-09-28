@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 
 import Header from "./components/UI/Header";
 import SearchBar from "./components/UI/SearchBar";
+import Dropdown from "./components/UI/Dropdown";
 import Container from "./components/UI/Container";
 import Card from "./components/UI/Card";
 
@@ -23,6 +24,8 @@ function App() {
   const [countries, setCountries] = useState<CountryData>();
   const [searchedValue, setSearchedValue] = useState("");
 
+  console.log(countries);
+
   const searchInputHandler = (event: any) => {
     setSearchedValue(event.target.value);
   };
@@ -40,6 +43,7 @@ function App() {
         value={searchedValue}
         searchInputHandler={searchInputHandler}
       />
+      <Dropdown />
       <Container>
         <>
           {countries?.map((country, id) =>
