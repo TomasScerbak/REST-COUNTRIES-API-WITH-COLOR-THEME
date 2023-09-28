@@ -7,7 +7,7 @@
   border-radius: 0.5rem;
   background: var(--white);
   box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.05);
-  margin-bottom: 4rem;
+  margin: 0 auto 4rem;
   padding: 1.4rem 0 1.4rem 3.2rem;
 }
 
@@ -26,5 +26,6 @@
   .search-wrapper {
     width: 48rem;
     height: 5.6rem;
+    margin-left: 31rem;
   }
 }
