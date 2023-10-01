@@ -24,8 +24,6 @@ function App() {
   const [countries, setCountries] = useState<CountryData>();
   const [searchedValue, setSearchedValue] = useState("");
 
-  console.log(countries);
-
   const searchInputHandler = (event: any) => {
     setSearchedValue(event.target.value);
   };
@@ -43,7 +41,7 @@ function App() {
         value={searchedValue}
         searchInputHandler={searchInputHandler}
       />
-      <Dropdown countries={countries} />
+      <Dropdown />
       <Container>
         <>
           {countries?.map((country, id) =>

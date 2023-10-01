@@ -1,23 +1,41 @@
 import { useState } from "react";
 
-type DropdownProps {
-    countries: []
-}
+import Arrow from "../../assets/angle-down-solid.svg";
 
-const Dropdown = (props: DropdownProps) => {
-  const [open, isOpen] = useState(false);
+import classes from "./Dropdown.module.css";
+
+const Dropdown = () => {
+  const [open, isOpen] = useState<boolean>(false);
+  const [country, setCountry] = useState("");
+
+  console.log(country);
+
+  const continets = ["Africa", "America", "Asia", "Europe", "Oceania"];
 
   const handleOpen = () => {
     isOpen(!open);
   };
 
+  const handleCountry = (event: any) => {
+    setCountry(event.target.innerHTML);
+  };
+
   return (
-    <div onClick={handleOpen}>
-      Filter by Region
+    <div className={classes["dropdown-wrapper"]} onClick={handleOpen}>
+      <div className={classes.filter}>
+        <span>Filter by Region</span>
+        <span>
+          <img className={classes.arrow} src={Arrow} alt="dropdown arrow" />
+        </span>
+      </div>
       {open ? (
         <div>
           <ul>
-            {props.countries.map((country) => <li>{country}</li>)}
+            {continets.map((continent, id) => (
+              <li onClick={handleCountry} key={id}>
+                {continent}
+              </li>
+            ))}
           </ul>
         </div>
       ) : null}
