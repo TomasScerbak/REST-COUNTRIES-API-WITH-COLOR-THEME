@@ -50,7 +50,7 @@ function App() {
         value={searchedValue}
         searchInputHandler={searchInputHandler}
       />
-      <Dropdown handleContinent={handleContinent} />
+      <Dropdown handleContinent={handleContinent} continent={continent} />
       <Container>
         <>
           {countries?.map((country, id) =>

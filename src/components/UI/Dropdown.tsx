@@ -4,7 +4,7 @@ import Arrow from "../../assets/angle-down-solid.svg";
 
 import classes from "./Dropdown.module.css";
 
-const Dropdown = ({ handleContinent }: any) => {
+const Dropdown = ({ handleContinent, continent }: any) => {
   const [open, isOpen] = useState<boolean>(false);
 
   const continets = ["Africa", "America", "Asia", "Europe", "Oceania"];
@@ -16,13 +16,13 @@ const Dropdown = ({ handleContinent }: any) => {
   return (
     <div className={classes["dropdown-wrapper"]} onClick={handleOpen}>
       <div className={classes.filter}>
-        <span>Filter by Region</span>
+        <span>{continent ? continent : "Filter by Region"}</span>
         <span>
           <img className={classes.arrow} src={Arrow} alt="dropdown arrow" />
         </span>
       </div>
       {open ? (
-        <div>
+        <div className={classes.dropdown}>
           <ul>
             {continets.map((continent, id) => (
               <li onClick={handleContinent} key={id}>
