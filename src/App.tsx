@@ -20,7 +20,7 @@ type CountryData = {
   };
 }[];
 
-function App() {
+const App = () => {
   const [countries, setCountries] = useState<CountryData>();
   const [continent, setContinent] = useState("");
   const [searchedValue, setSearchedValue] = useState("");
@@ -103,6 +103,6 @@ function App() {
       </Container>
     </Fragment>
   );
-}
+};
 
 export default App;
