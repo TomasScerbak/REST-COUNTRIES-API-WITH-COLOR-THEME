@@ -7,7 +7,7 @@ import classes from "./Dropdown.module.css";
 const Dropdown = ({ handleContinent, continent }: any) => {
   const [open, isOpen] = useState<boolean>(false);
 
-  const continets = ["Africa", "America", "Asia", "Europe", "Oceania"];
+  const continets = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
   const handleOpen = () => {
     isOpen(!open);

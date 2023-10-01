@@ -25,6 +25,14 @@ function App() {
   const [continent, setContinent] = useState("");
   const [searchedValue, setSearchedValue] = useState("");
 
+  const countriesByContinent = countries?.filter(
+    (country) => country.region === continent
+  );
+
+  console.log(countriesByContinent);
+
+  console.log(countries);
+
   // function that is handeling search input
   const searchInputHandler = (event: any) => {
     setSearchedValue(event.target.value);
@@ -53,20 +61,22 @@ function App() {
       <Dropdown handleContinent={handleContinent} continent={continent} />
       <Container>
         <>
-          {countries?.map((country, id) =>
-            country.name.common
-              .toLowerCase()
-              .match(searchedValue.toLowerCase()) ? (
-              <Card
-                image={country.flags.svg}
-                name={country.name.common}
-                population={country.population}
-                region={country.region}
-                capital={country.capital}
-                key={id}
-              />
-            ) : null
-          )}
+          {searchedValue
+            ? countries?.map((country, id) =>
+                country.name.common
+                  .toLowerCase()
+                  .match(searchedValue.toLowerCase()) ? (
+                  <Card
+                    image={country.flags.svg}
+                    name={country.name.common}
+                    population={country.population}
+                    region={country.region}
+                    capital={country.capital}
+                    key={id}
+                  />
+                ) : null
+              )
+            : null}
         </>
         <>
           {!searchedValue
@@ -79,8 +89,27 @@ function App() {
                   capital={country.capital}
                   key={id}
                 />
+              )) &&
+              countriesByContinent?.map((country, id) => (
+                <Card
+                  image={country.flags.svg}
+                  name={country.name.common}
+                  population={country.population}
+                  region={country.region}
+                  capital={country.capital}
+                  key={id}
+                />
               ))
-            : null}
+            : countries?.map((country, id) => (
+                <Card
+                  image={country.flags.svg}
+                  name={country.name.common}
+                  population={country.population}
+                  region={country.region}
+                  capital={country.capital}
+                  key={id}
+                />
+              ))}
         </>
       </Container>
     </Fragment>
