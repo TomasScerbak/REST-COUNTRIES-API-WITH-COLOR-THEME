@@ -4,20 +4,13 @@ import Arrow from "../../assets/angle-down-solid.svg";
 
 import classes from "./Dropdown.module.css";
 
-const Dropdown = () => {
+const Dropdown = ({ handleContinent }: any) => {
   const [open, isOpen] = useState<boolean>(false);
-  const [country, setCountry] = useState("");
-
-  console.log(country);
 
   const continets = ["Africa", "America", "Asia", "Europe", "Oceania"];
 
   const handleOpen = () => {
     isOpen(!open);
-  };
-
-  const handleCountry = (event: any) => {
-    setCountry(event.target.innerHTML);
   };
 
   return (
@@ -32,7 +25,7 @@ const Dropdown = () => {
         <div>
           <ul>
             {continets.map((continent, id) => (
-              <li onClick={handleCountry} key={id}>
+              <li onClick={handleContinent} key={id}>
                 {continent}
               </li>
             ))}

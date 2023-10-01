@@ -22,17 +22,26 @@ type CountryData = {
 
 function App() {
   const [countries, setCountries] = useState<CountryData>();
+  const [continent, setContinent] = useState("");
   const [searchedValue, setSearchedValue] = useState("");
 
+  // function that is handeling search input
   const searchInputHandler = (event: any) => {
     setSearchedValue(event.target.value);
   };
 
+  // state that is fetching data from countries API
   useEffect(() => {
     fetchCountriesAPI().then((data) => {
       setCountries(data);
     });
   }, []);
+
+  // function that handles state from child dropdown component to parent
+  // to see which continent user filtered
+  const handleContinent = (event: any) => {
+    setContinent(event.target.innerHTML);
+  };
 
   return (
     <Fragment>
@@ -41,7 +50,7 @@ function App() {
         value={searchedValue}
         searchInputHandler={searchInputHandler}
       />
-      <Dropdown />
+      <Dropdown handleContinent={handleContinent} />
       <Container>
         <>
           {countries?.map((country, id) =>
