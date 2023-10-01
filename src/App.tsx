@@ -29,10 +29,6 @@ function App() {
     (country) => country.region === continent
   );
 
-  console.log(countriesByContinent);
-
-  console.log(countries);
-
   // function that is handeling search input
   const searchInputHandler = (event: any) => {
     setSearchedValue(event.target.value);
