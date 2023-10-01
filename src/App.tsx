@@ -57,7 +57,7 @@ function App() {
       <Dropdown handleContinent={handleContinent} continent={continent} />
       <Container>
         <>
-          {searchedValue
+          {searchedValue && countries
             ? countries?.map((country, id) =>
                 country.name.common
                   .toLowerCase()
@@ -75,18 +75,8 @@ function App() {
             : null}
         </>
         <>
-          {!searchedValue
-            ? countries?.map((country, id) => (
-                <Card
-                  image={country.flags.svg}
-                  name={country.name.common}
-                  population={country.population}
-                  region={country.region}
-                  capital={country.capital}
-                  key={id}
-                />
-              )) &&
-              countriesByContinent?.map((country, id) => (
+          {searchedValue && countriesByContinent
+            ? countriesByContinent?.map((country, id) => (
                 <Card
                   image={country.flags.svg}
                   name={country.name.common}
