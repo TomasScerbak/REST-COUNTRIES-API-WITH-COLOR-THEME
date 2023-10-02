@@ -6,6 +6,11 @@
   overflow: hidden;
 }
 
+.card:hover {
+  transform: scale(1.02);
+  transition: 0.3s all;
+}
+
 .card-body {
   padding: 2.4rem 0 4.6rem 2.4rem;
 }
