@@ -25,6 +25,11 @@ const SearchBar = (props: any) => {
           </svg>
         </label>
         <input
+          style={
+            theme === "light"
+              ? { color: "var(--very-dark-blue)" }
+              : { color: "var(--white)" }
+          }
           value={props.value}
           onChange={props.searchInputHandler}
           id="search"
