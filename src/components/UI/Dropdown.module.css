@@ -39,4 +39,17 @@
   .dropdown-wrapper {
     margin-left: 31rem;
   }
+
+  .filter {
+    font-size: 1.4rem;
+  }
+
+  .dropdown {
+    font-size: 1.4rem;
+  }
+
+  .arrow {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
 }
