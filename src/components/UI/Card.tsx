@@ -32,7 +32,7 @@ const Card = (props: CardProps) => {
             Population:
           </p>
           <p className={`${classes["number"]} ${setThemeStyles("fontColor")}`}>
-            {props.population}
+            {props.population.toLocaleString()}
           </p>
         </div>
         <div className={classes["region-wrapper"]}>
