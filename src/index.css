@@ -51,7 +51,7 @@ input::placeholder {
   font-size: 1.2rem;
   font-weight: 400;
   color: var(--opacity-light-gray);
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 li {
@@ -72,4 +72,10 @@ li {
 
 .body-background-dark {
   background-color: var(--very-dark-blue);
+}
+
+@media screen and (min-width: 760px) {
+  input::placeholder {
+    font-size: 1.4rem;
+  }
 }
