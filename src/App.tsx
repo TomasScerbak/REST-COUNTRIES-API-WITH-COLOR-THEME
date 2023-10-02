@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 
 import Header from "./components/UI/Header";
+import InputsContainer from "./components/UI/InputsContainer";
 import SearchBar from "./components/UI/SearchBar";
 import Dropdown from "./components/UI/Dropdown";
 import Container from "./components/UI/Container";
@@ -50,11 +51,13 @@ const App = () => {
   return (
     <Fragment>
       <Header />
-      <SearchBar
-        value={searchedValue}
-        searchInputHandler={searchInputHandler}
-      />
-      <Dropdown handleContinent={handleContinent} continent={continent} />
+      <InputsContainer>
+        <SearchBar
+          value={searchedValue}
+          searchInputHandler={searchInputHandler}
+        />
+        <Dropdown handleContinent={handleContinent} continent={continent} />
+      </InputsContainer>
       <Container>
         <>
           {searchedValue

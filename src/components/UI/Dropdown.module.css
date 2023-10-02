@@ -37,7 +37,7 @@
 
 @media screen and (min-width: 760px) {
   .dropdown-wrapper {
-    margin-left: 31rem;
+    margin: 0;
   }
 
   .filter {
