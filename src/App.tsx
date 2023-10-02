@@ -22,10 +22,20 @@ type CountryData = {
 }[];
 
 const App = () => {
+  const [cardClicked, setCardClicked] = useState(false);
   const [countries, setCountries] = useState<CountryData>();
   const [continent, setContinent] = useState("");
   const [searchedValue, setSearchedValue] = useState("");
 
+  console.log(cardClicked);
+
+  //function that is watching whether card component was clicked
+  //to show country details
+  const isCardClicked = () => {
+    setCardClicked(!cardClicked);
+  };
+
+  // function that is filtering countries by continent
   const countriesByContinent = countries?.filter(
     (country) => country.region === continent
   );
@@ -66,6 +76,7 @@ const App = () => {
                   .toLowerCase()
                   .match(searchedValue.toLowerCase()) ? (
                   <Card
+                    isCardClicked={isCardClicked}
                     image={country.flags.svg}
                     name={country.name.common}
                     population={country.population}
@@ -81,6 +92,7 @@ const App = () => {
           {countriesByContinent
             ? countriesByContinent?.map((country, id) => (
                 <Card
+                  isCardClicked={isCardClicked}
                   image={country.flags.svg}
                   name={country.name.common}
                   population={country.population}
@@ -94,6 +106,7 @@ const App = () => {
         <>
           {countries?.map((country, id) => (
             <Card
+              isCardClicked={isCardClicked}
               image={country.flags.svg}
               name={country.name.common}
               population={country.population}

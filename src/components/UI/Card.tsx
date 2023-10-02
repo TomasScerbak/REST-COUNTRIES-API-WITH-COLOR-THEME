@@ -9,13 +9,17 @@ type CardProps = {
   population: string;
   region: string;
   capital: string[];
+  isCardClicked: () => void;
 };
 
 const Card = (props: CardProps) => {
   const { setThemeStyles } = useContext(ThemeContext);
 
   return (
-    <div className={`${classes.card} ${setThemeStyles("backgroundHeader")}`}>
+    <div
+      onClick={props.isCardClicked}
+      className={`${classes.card} ${setThemeStyles("backgroundHeader")}`}
+    >
       <header>
         <img className={classes.image} src={props.image} alt="country flag" />
       </header>
