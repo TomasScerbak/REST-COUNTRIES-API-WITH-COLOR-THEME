@@ -42,7 +42,12 @@ const Header = () => {
             </svg>
           )}
         </span>
-        <span onClick={setThemeHandler} className={classes["header__darkmode"]}>
+        <span
+          onClick={setThemeHandler}
+          className={`${classes["header__darkmode"]} ${setThemeStyles(
+            "fontColor"
+          )}`}
+        >
           {theme === "light" ? "Dark Mode" : "Light Mode"}
         </span>
       </div>
