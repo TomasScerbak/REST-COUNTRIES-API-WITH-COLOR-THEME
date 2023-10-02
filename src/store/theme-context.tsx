@@ -25,7 +25,7 @@ export function ThemeProvider({ children }: any) {
   };
 
   return (
-    <ThemeContext.Provider value={{ setThemeStyles, setThemeHandler }}>
+    <ThemeContext.Provider value={{ setThemeStyles, setThemeHandler, theme }}>
       {children}
     </ThemeContext.Provider>
   );

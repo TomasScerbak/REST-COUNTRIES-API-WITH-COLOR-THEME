@@ -1,13 +1,14 @@
 import { useContext, useEffect } from "react";
 
 import MoonImage from "../../assets/moon-regular.svg";
+import SunImage from "../../assets/sun-regular.svg";
 
 import classes from "./Header.module.css";
 
 import ThemeContext from "../../store/theme-context";
 
 const Header = () => {
-  const { setThemeHandler, setThemeStyles } = useContext(ThemeContext);
+  const { setThemeHandler, setThemeStyles, theme } = useContext(ThemeContext);
 
   // changing background color of body depending on setThemneHandler value
   useEffect(() => {
@@ -23,12 +24,12 @@ const Header = () => {
         <span>
           <img
             className={classes["header__image"]}
-            src={MoonImage}
+            src={theme === "light" ? MoonImage : SunImage}
             alt="theme mode image of moon"
           />
         </span>
         <span onClick={setThemeHandler} className={classes["header__darkmode"]}>
-          Dark mode
+          {theme === "light" ? "Dark Mode" : "Light Mode"}
         </span>
       </div>
     </header>
