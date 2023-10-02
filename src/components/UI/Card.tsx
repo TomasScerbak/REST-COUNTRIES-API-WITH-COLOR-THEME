@@ -1,4 +1,7 @@
+import { useContext } from "react";
 import classes from "./Card.module.css";
+
+import ThemeContext from "../../store/theme-context";
 
 type CardProps = {
   image: string;
@@ -9,8 +12,10 @@ type CardProps = {
 };
 
 const Card = (props: CardProps) => {
+  const { setThemeStyles } = useContext(ThemeContext);
+
   return (
-    <div className={classes.card}>
+    <div className={`${classes.card} ${setThemeStyles("backgroundHeader")}`}>
       <header>
         <img className={classes.image} src={props.image} alt="country flag" />
       </header>

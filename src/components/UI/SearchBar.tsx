@@ -1,10 +1,20 @@
+import { useContext } from "react";
+
 import SearchIcon from "../../assets/magnifying-glass-solid.svg";
 
 import classes from "./SearchBar.module.css";
 
+import ThemeContext from "../../store/theme-context";
+
 const SearchBar = (props: any) => {
+  const { setThemeStyles } = useContext(ThemeContext);
+
   return (
-    <section className={classes["search-wrapper"]}>
+    <section
+      className={`${classes["search-wrapper"]} ${setThemeStyles(
+        "backgroundHeader"
+      )}`}
+    >
       <div className={classes["search-input__wrapper"]}>
         <label htmlFor="search">
           <img

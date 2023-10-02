@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import MoonImage from "../../assets/moon-regular.svg";
 
@@ -8,6 +8,12 @@ import ThemeContext from "../../store/theme-context";
 
 const Header = () => {
   const { setThemeHandler, setThemeStyles } = useContext(ThemeContext);
+
+  // changing background color of body depending on setThemneHandler value
+  useEffect(() => {
+    document.body.className = setThemeStyles("backgroundBody");
+  }, [setThemeHandler]);
+
   return (
     <header
       className={`${classes.header} ${setThemeStyles("backgroundHeader")}`}
