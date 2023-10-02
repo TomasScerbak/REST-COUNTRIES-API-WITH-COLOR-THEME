@@ -28,7 +28,7 @@ const SearchBar = (props: any) => {
           value={props.value}
           onChange={props.searchInputHandler}
           id="search"
-          className={classes.search}
+          className={`${classes.search} ${setThemeStyles("backgroundHeader")}`}
           type="text"
           placeholder="Search for a country..."
         />
