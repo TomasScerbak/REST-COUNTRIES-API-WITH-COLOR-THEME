@@ -18,6 +18,7 @@ export function ThemeProvider({ children }: any) {
       themeTwo: {
         backgroundHeader: "header-background-dark",
         backgroundBody: "body-background-dark",
+        fontColor: "font-color-white",
       },
     };
     if (theme === "light") return styles.themeOne[args];
